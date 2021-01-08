@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="970e918c-4044-42e3-bd76-ef686582e4be" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/opencv/modules/dnn/test/imagenet_cls_test_alexnet.py" beforeDir="false" afterPath="$PROJECT_DIR$/opencv/modules/dnn/test/imagenet_cls_test_alexnet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opencv/modules/dnn/test/pascal_semsegm_test_fcn.py" beforeDir="false" afterPath="$PROJECT_DIR$/opencv/modules/dnn/test/pascal_semsegm_test_fcn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opencv/modules/python/test/test_filestorage_io.py" beforeDir="false" afterPath="$PROJECT_DIR$/opencv/modules/python/test/test_filestorage_io.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opencv/modules/python/test/test_persistence.py" beforeDir="false" afterPath="$PROJECT_DIR$/opencv/modules/python/test/test_persistence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opencv/samples/dnn/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/opencv/samples/dnn/common.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opencv/samples/python/qrcode.py" beforeDir="false" afterPath="$PROJECT_DIR$/opencv/samples/python/qrcode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opencv/samples/python/tutorial_code/core/file_input_output/file_input_output.py" beforeDir="false" afterPath="$PROJECT_DIR$/opencv/samples/python/tutorial_code/core/file_input_output/file_input_output.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/opencv/samples/python/tutorial_code/ml/py_svm_opencv/hogsvm.py" beforeDir="false" afterPath="$PROJECT_DIR$/opencv/samples/python/tutorial_code/ml/py_svm_opencv/hogsvm.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/opencv" />
+  </component>
+  <component name="JupyterTrust" id="37cab3d5-5c73-4b15-b7ce-ba4f88b207c3" />
+  <component name="ProjectId" id="1kqMQ7b6XAHpCGVShnheeEBR5tu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="avaragePrediction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="-i C:\Users\Lenovo\Desktop\bakalarka\CelebA -p C:\Users\Lenovo\PycharmProjects\faceDetection\opencv\samples\dnn\face_detector\deploy.prototxt -m C:\Users\Lenovo\PycharmProjects\faceDetection\res10_300x300_ssd_iter_140000.caffemodel" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="precisionRecall" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="avaragePrediction" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/precisionRecall.py" />
+      <option name="PARAMETERS" value="-i C:\Users\Lenovo\Desktop\bakalarka\CelebA -p C:\Users\Lenovo\PycharmProjects\faceDetection\opencv\samples\dnn\face_detector\deploy.prototxt -m C:\Users\Lenovo\PycharmProjects\faceDetection\res10_300x300_ssd_iter_140000.caffemodel" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.precisionRecall" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="970e918c-4044-42e3-bd76-ef686582e4be" name="Default Changelist" comment="" />
+      <created>1606423648512</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606423648512</updated>
+      <workItem from="1606423675419" duration="95000" />
+      <workItem from="1607023731423" duration="10173000" />
+      <workItem from="1607074144964" duration="1118000" />
+      <workItem from="1608132905765" duration="9613000" />
+      <workItem from="1608223394299" duration="4708000" />
+      <workItem from="1608283546491" duration="601000" />
+      <workItem from="1609951103614" duration="11296000" />
+      <workItem from="1610017741072" duration="14705000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="2226" y="119" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1607033832822">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="2226" y="119" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1607033832822" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1610066257398">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610066257398" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1610066257398">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610066257398" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1610066257397">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610066257397" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1610066257398">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610066257398" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1610064355752">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610064355752" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1610064355752">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610064355752" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1610064355752">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610064355752" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1610064355752">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1610064355752" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/avaragePrediction$main.coverage" NAME="main Coverage Results" MODIFIED="1610065815397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/avaragePrediction$precisionRecall.coverage" NAME="precisionRecall Coverage Results" MODIFIED="1610034688343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

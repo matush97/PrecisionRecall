@@ -30,6 +30,7 @@ args = vars(ap.parse_args())
 
 #na vypocet false_negative
 for imagePath in paths.list_images(args["images"]):
+    variableFind = 0  # pomocna s ktorou preskocim do elif
     net = cv2.dnn.readNetFromCaffe(args["prototxt"], args["model"])
     image = cv2.imread(imagePath)
     (h, w) = image.shape[:2]
@@ -41,13 +42,12 @@ for imagePath in paths.list_images(args["images"]):
     # hodnoty Ground-truth BB
     photo_name = os.path.basename(imagePath)
     line = readFromTxt(photo_name)
-    if (line):
-        x_r = int(line[1])
-        y_r = int(line[2])
-        w_r = int(line[3])
-        h_r = int(line[4])
-        x2_r = x_r + w_r
-        y2_r = y_r + h_r
+    x_r = int(line[1])
+    y_r = int(line[2])
+    w_r = int(line[3])
+    h_r = int(line[4])
+    x2_r = x_r + w_r
+    y2_r = y_r + h_r
 
     for i in range(0, detections.shape[2]):
         confidence = detections[0, 0, i, 2]
@@ -55,12 +55,10 @@ for imagePath in paths.list_images(args["images"]):
             box = detections[0, 0, i, 3:7] * np.array([w, h, w, h])
             (startX, startY, endX, endY) = box.astype("int")
 
-            # draw the bounding box of the face along with the associated
-            # probability, TODO prediction BB
-            text = "{:.2f}%".format(confidence * 100)
+            # # draw the bounding box of the face along with the associated
+            # # probability, TODO prediction BB
+            # text = "{:.2f}%".format(confidence * 100)
             y = startY - 10 if startY - 10 > 10 else startY + 10
-            cv2.rectangle(image, (startX, startY), (endX, endY),
-                          (0, 0, 255), 2)
 
             boxA = [startX, startY, endX, endY]
             boxB = [x_r, y_r, x2_r, y2_r]
@@ -70,6 +68,12 @@ for imagePath in paths.list_images(args["images"]):
             # vypocet false negative
             if (iou < correctValue):
                 false_neg += 1
+                print(photo_name, "  ", line[0], " ", false_neg)
+                variableFind += 1
+        # TODO zistovanie false_negative
+        elif (i == 199 and variableFind == 0):
+            false_neg += 1
+            print(photo_name, "  ", line[0], " ", false_neg)
 
 
 print("FALSE NEGATIVE ",false_neg)

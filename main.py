@@ -31,6 +31,7 @@ args = vars(ap.parse_args())
 
 #na vypocet false_negative
 for imagePath in paths.list_images(args["images"]):
+    variableFind = 0 # pomocna s ktorou preskocim do elif
     net = cv2.dnn.readNetFromCaffe(args["prototxt"], args["model"])
     image = cv2.imread(imagePath)
 
@@ -46,45 +47,41 @@ for imagePath in paths.list_images(args["images"]):
     net.setInput(blob)
     detections = net.forward()
 
+    # hodnoty Ground-truth BB
+    photo_name = os.path.basename(imagePath)
+    line = readFromTxt(photo_name)
+    x_r = int(line[1])
+    y_r = int(line[2])
+    w_r = int(line[3])
+    h_r = int(line[4])
+    x2_r = x_r + w_r
+    y2_r = y_r + h_r
+
     for i in range(0, detections.shape[2]):
         confidence = detections[0, 0, i, 2]
         if confidence > args["confidence"]:
             box = detections[0, 0, i, 3:7] * np.array([w, h, w, h])
             (startX, startY, endX, endY) = box.astype("int")
 
-            # hodnoty Ground-truth BB
-            photo_name = os.path.basename(imagePath)
-            line = readFromTxt(photo_name)
-            x_r = int(line[1])
-            y_r = int(line[2])
-            w_r = int(line[3])
-            h_r = int(line[4])
-            x2_r = x_r + w_r
-            y2_r = y_r + h_r
-
-            # draw the bounding box of the face along with the associated
-            # probability, TODO prediction BB
-            text = "{:.2f}%".format(confidence * 100)
+            # # draw the bounding box of the face along with the associated
+            # # probability, TODO prediction BB
+            # text = "{:.2f}%".format(confidence * 100)
             y = startY - 10 if startY - 10 > 10 else startY + 10
-            cv2.rectangle(image, (startX, startY), (endX, endY),
-                          (0, 0, 255), 2)
-            cv2.putText(image, text, (startX, y),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 255), 2)
-            # TODO read rectangle from file Ground-truth BB
-            cv2.rectangle(image, (x_r, y_r), (x2_r, y2_r),
-                          (0, 255, 0), 2)
 
             boxA = [startX, startY, endX, endY]
             boxB = [x_r, y_r, x2_r, y2_r]
             # compute the intersection over union and display it
             iou = bb_intersection_over_union(boxA, boxB)
-            cv2.putText(image, "IoU: {:.4f}".format(iou), (10, 30),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
 
             # vypocet false negative
             if (iou < correctValue):
                 false_neg += 1
                 print(photo_name, "  ", line[0], " ", false_neg)
+            variableFind += 1
+        #TODO zistovanie false_negative
+        elif (i == 199 and variableFind == 0):
+            false_neg += 1
+            print(photo_name, "  ", line[0], " ", false_neg)
 
 
 print("FALSE NEGATIVE ",false_neg)
