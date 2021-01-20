@@ -15,7 +15,7 @@ false_pos = 0
 false_neg = 0
 correctValue = 0.5
 # motion blur
-kernel_size = 30
+kernel_size = 10
 
 # construct the argument parse and parse the arguments
 ap = argparse.ArgumentParser()
@@ -76,13 +76,12 @@ for imagePath in paths.list_images(args["images"]):
             # vypocet false negative
             if (iou < correctValue):
                 false_neg += 1
-                print(photo_name, "  ", line[0], " ", false_neg)
+                #print(photo_name, "  ", line[0], " ", false_neg)
             variableFind += 1
         #TODO zistovanie false_negative
         elif (i == 199 and variableFind == 0):
             false_neg += 1
-            print(photo_name, "  ", line[0], " ", false_neg)
-
+            #print(photo_name, "  ", line[0], " ", false_neg)
 
 print("FALSE NEGATIVE ",false_neg)
 
@@ -140,21 +139,21 @@ for imagePath in paths.list_images(args["images"]):
             # probability, TODO prediction BB, red box
             text = "{:.2f}%".format(confidence * 100)
             y = startY - 10 if startY - 10 > 10 else startY + 10
-            cv2.rectangle(image, (startX, startY), (endX, endY),
-                          (0, 0, 255), 2)
-            cv2.putText(image, text, (startX, y),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 255), 2)
-            #TODO read rectangle from file Ground-truth BB, green box
-            cv2.rectangle(image, (x_r, y_r), (x2_r, y2_r),
-                          (0, 255, 0), 2)
+            # cv2.rectangle(image, (startX, startY), (endX, endY),
+            #               (0, 0, 255), 2)
+            # cv2.putText(image, text, (startX, y),
+            #             cv2.FONT_HERSHEY_SIMPLEX, 0.45, (0, 0, 255), 2)
+            # #TODO read rectangle from file Ground-truth BB, green box
+            # cv2.rectangle(image, (x_r, y_r), (x2_r, y2_r),
+            #               (0, 255, 0), 2)
 
 
             boxA = [startX,startY,endX,endY]
             boxB = [x_r, y_r, x2_r, y2_r]
             # compute the intersection over union and display it
             iou = bb_intersection_over_union(boxA, boxB)
-            cv2.putText(image, "IoU: {:.4f}".format(iou), (10, 30),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
+            # cv2.putText(image, "IoU: {:.4f}".format(iou), (10, 30),
+            #             cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
 
             # vypocet Precision a Recall
             if (iou >= correctValue):
@@ -178,9 +177,10 @@ for imagePath in paths.list_images(args["images"]):
             appendToTxt(photo_name,startX,startY,width,height)
 
             # show the output image
-            cv2.imshow("Output", image)
-            cv2.waitKey(0)
+            # cv2.imshow("Output", image)
+            # cv2.waitKey(0)
 
+plot_model(precisionArray,recallArray)
 
 #python detect_faces.py -i C:\Users\Lenovo\Desktop\bakalarka\blurPhotos\foto7.jpg -p C:\Users\Lenovo\PycharmProjects\faceDetection\opencv\sa
 #mples\dnn\face_detector\deploy.prototxt -m C:\Users\Lenovo\PycharmProjects\faceDetection\res10_300x300_ssd_iter_140000.caffemodel

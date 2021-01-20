@@ -1,3 +1,7 @@
+import matplotlib.pyplot as plot
+precisionArray = []
+recallArray = []
+
 def printToAP():
     file = open("avaragePrediction.txt", "w")
     file.write("image_id      True_Positive       Precision                    Recall\n")
@@ -24,6 +28,15 @@ def appendToAPB(name,true,precision,recall):
     file.write(str(recall) + "\n")
     file.close()
 
+def plot_model(precisionArray,recallArray):
+    plot.plot(precisionArray)
+    plot.plot(recallArray)
+    plot.title('Avarage prediction Blurred 10')
+    plot.ylabel('precision')
+    plot.xlabel('recall')
+    plot.legend(['precision', 'recall'], loc='lower right')
+    plot.show()
+
 def calcPrecisionRecall(photo_name,true_pos,false_pos,false_neg,value):
     # vypocita precision a recall
     try:
@@ -35,6 +48,10 @@ def calcPrecisionRecall(photo_name,true_pos,false_pos,false_neg,value):
         recall = true_pos / ( true_pos + false_neg)
     except ZeroDivisionError:
         precision = 0.0
+
+    # arrays of precision and recall
+    precisionArray.append(precision)
+    recallArray.append(recall)
 
     if (value == 1):
         appendToAP(photo_name, true_pos, precision, recall)

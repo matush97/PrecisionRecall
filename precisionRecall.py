@@ -68,12 +68,12 @@ for imagePath in paths.list_images(args["images"]):
             # vypocet false negative
             if (iou < correctValue):
                 false_neg += 1
-                print(photo_name, "  ", line[0], " ", false_neg)
-                variableFind += 1
+                #print(photo_name, "  ", line[0], " ", false_neg)
+            variableFind += 1
         # TODO zistovanie false_negative
         elif (i == 199 and variableFind == 0):
             false_neg += 1
-            print(photo_name, "  ", line[0], " ", false_neg)
+            #print(photo_name, "  ", line[0], " ", false_neg)
 
 
 print("FALSE NEGATIVE ",false_neg)
@@ -157,13 +157,15 @@ for imagePath in paths.list_images(args["images"]):
             print("Ground truth BB ", x_r,y_r,x2_r,y2_r)
 
 
-            #vyprintovanie do priecinku faces.txt
+            #vyprintovanie do priecinku image.txt,moje udaje (z prediction bb)
             appendToTxt(photo_name,startX,startY,width,height)
 
             # show the output image
             # cv2.imshow("Output", image)
             # cv2.waitKey(0)
 
+
+plot_model(precisionArray,recallArray)
 
 #python detect_faces.py -i C:\Users\Lenovo\Desktop\bakalarka\blurPhotos\foto7.jpg -p C:\Users\Lenovo\PycharmProjects\faceDetection\opencv\sa
 #mples\dnn\face_detector\deploy.prototxt -m C:\Users\Lenovo\PycharmProjects\faceDetection\res10_300x300_ssd_iter_140000.caffemodel
